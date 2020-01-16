@@ -1,0 +1,19 @@
+web:
+    image: nginx:latest
+    ports:
+        - "8080:80"
+    volumes:
+        - c:/docker/code:/code
+        - c:/docker/default.conf:/etc/nginx/conf.d/default.conf
+ 
+        
+    links:
+        - php
+    
+    # not work
+        
+php:
+    image: php:7-fpm
+    volumes:
+        - c:/docker/code:/code
+    
